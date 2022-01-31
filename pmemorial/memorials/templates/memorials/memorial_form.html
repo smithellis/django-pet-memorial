@@ -1,0 +1,18 @@
+{% extends "memorials/base.html" %}
+
+{% block title %}Add a Memorial for {{ user.profile.hospital }}{% endblock %}
+
+{% block content %}
+<div class="container">
+<h2>Add a Memorial for {{ user.profile.hospital }}</h2>
+
+<form action="" method="post">
+    <table>
+    {% csrf_token %}
+    {{ form.as_p }}
+    </table>
+    <input type="submit" value="Submit">
+<input type="hidden" name="hospital" value="{{ user.profile.hospital.id }}">
+</form>
+</div>
+{% endblock %}

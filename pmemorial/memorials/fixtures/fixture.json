@@ -1,0 +1,42 @@
+[ 
+    {
+        "model": "memorials.hospital",
+        "pk": 1,
+        "fields": {
+            "hosp_name": "Smithco",
+            "hosp_add_one": "111 Street Rd",
+            "hosp_add_city": "Statham",
+            "hosp_add_state": "GA",
+            "hosp_add_phone": "444-444-4444"
+        }
+    },
+    {
+        "model": "memorials.memorial",
+        "pk": 1,
+        "fields": {
+            "hospital": 1,
+            "owner_name": "Smith Smith",
+            "owner_address_one": "111 Street Rd",
+            "owner_address_two": "",
+            "owner_city": "Athens",
+            "owner_state": "GA",
+            "owner_zipcode": "30606",
+            "pet_name": "Fido",
+            "pet_gender": "male",
+            "pet_species": "dog",
+            "memorial_status": "saved",
+            "payment_status": "outstanding",
+            "payment_code": "00000",
+            "cvm_status": "not actionable"
+        }
+    },
+    {
+        "model": "memorials.fund",
+        "pk": 1,
+        "fields":{
+            "fund_name": "Companion Animal Fund",
+            "fund_url_code": "b13296f1-233c-4a91-b4f3-67989d9e8f16",
+            "fund_description": "This is a description of the fund"
+        }
+    }
+]

@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}Delete a Memorial for {{ user.profile.hospital }}{% endblock %}
+
+{% block content %}
+<h1>Delete a Memorial for {{ user.profile.hospital }}</h1>
+
+<form action="" method="post">
+    {% csrf_token %}
+    <h1>The following objects as well as their related objects will be deleted. Are you sure?</h1>>
+    <ul>
+
+            <input type="hidden" value="{{ object.id }}" name="itemsToDelete" />
+            <li><a href="{{ object.get_absolute_url }}">{{ object }}</a></li>
+
+    </ul>
+    <input type="submit" class="btn btn-primary" value="Confirm deletion" name="confirm_delete" />
+    <input type="submit" class="btn btn-primary" value="Cancel" name="cancel"/>
+</form>
+
+{% endblock %}

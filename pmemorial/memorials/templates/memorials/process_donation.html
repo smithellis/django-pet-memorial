@@ -1,0 +1,73 @@
+{% extends "memorials/base.html" %}
+
+{% block title %}Memorials for {{ user.profile.hospital }}{% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Prepare Memorials for Donation</h2>
+            <p>Select the Memorials you'd like to submit today, as well as the fund you wish to donate to.</p>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <p><input type="checkbox" name="select-all" id="select-all" value="select_all"> SELECT ALL</p>
+<table style="width: 100%;">
+    <thead>
+        <tr>
+            <th>SELECT</th>
+            <th>Hospital Name</th>
+            <th>Pet Owner Name</th>
+            <th>Pet Name</th>
+            <th>Memorial Creation Date</th>
+        </tr>
+    </thead>
+{% for memorial in memorials %}
+{% if memorial.status == 'New' %}
+    <tr>
+    <td>
+        <input type="checkbox" name="memorial" id="memorials-{{ memorial.id }}" value="{{ memorial.id }}">
+    </td>
+    <td><a href="{{ memorial.get_absolute_url }}">{{ memorial.hospital }}</a></td>
+    <td><a href="{{ memorial.get_absolute_url }}">{{ memorial.owner_name}}</a></td>
+    <td><a href="{{ memorial.get_absolute_url }}">{{ memorial.pet_name}}</a></td>
+    <td><a href="{{ memorial.get_absolute_url }}">{{ memorial.create_date }}</a></td>
+</tr>
+{% endif %}
+{% empty %}
+    <tr><td>No memorials found.</td></tr>
+{% endfor %}
+</table>
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Choose a Fund</h2>
+            <select name="fund" id="fund">
+            {% for fund in funds %}
+                <option value="{{ fund.id }}">{{ fund.fund_name }}</option>
+            {% endfor %}
+            </select>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    $('#select-all').click(function(event) {   
+        if(this.checked) {
+            // Iterate each checkbox
+            $(':checkbox').each(function() {
+                this.checked = true;                        
+            });
+        } else {
+            $(':checkbox').each(function() {
+                this.checked = false;                       
+            });
+        }
+    }); 
+    </script>
+{% endblock %}

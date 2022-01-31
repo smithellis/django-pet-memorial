@@ -1,0 +1,70 @@
+/* 
+Black: #000000
+Bulldog Red: #BA0C2f
+Olympic: #004E60
+Font: "Oswald", sans-serif;
+*/
+.container {
+    width: 100%;
+    margin: 0 auto;
+}
+
+body {
+    font-family: "Merriweather Sans", sans-serif;
+    background-color: #C8D8EB;
+}
+
+h1 {
+    font-size: 2.5em;
+    color: #004E60;
+}
+
+.navbar {
+    background-color: #BA0C2F;
+    color: #ffffff;
+    margin-left: 10%;
+
+}
+
+.navbarcol {
+    background-color: #BA0C2F;
+}
+
+
+.nav-link {
+    color: #ffffff;
+}
+
+.active>.nav-link {
+    background-color: #E4002B;
+}
+
+a {
+    color: #BA0C2f;
+}
+
+a:hover {
+    color: #E4002B;
+    text-decoration: none;
+}
+
+.navbar-brand {
+    color: #ffffff;
+}
+
+h2 {
+    padding-top: 15px;
+}
+
+td {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+label {
+    width: 20%;
+}
+
+section {
+    background-color: #ffffff;
+}

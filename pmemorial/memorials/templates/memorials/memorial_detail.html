@@ -1,0 +1,28 @@
+{% extends "memorials/base.html" %}
+
+{% block title %}{{ user.profile.hospital }}{% endblock %}
+
+{% block content %}
+<div class="container">
+<h2>Memorial Details</h2>
+<h3>A Memorial for the beloved pet of {{ object.owner_name }}</h3>
+<p>Once submitted to processing, it will be mailed to:</p>
+<address>
+    <strong>{{ object.owner_name }}</strong><br>
+    {{ object.owner_address_one }}<br>
+    {{ object.owner_address_two }}<br>
+    {{ object.owner_city }}, {{ object.owner_state }} {{ object.owner_zipcode }}<br>
+</address>
+
+<p>Their pet's details were:</p>
+<p>Pet name: <strong>{{ object.pet_name }}</strong></p>
+<p>{{object.pet_name}} was a <strong>{{ object.pet_species }}</strong></p>
+
+<p>Memorial Status: <strong>{{ object.status }}</strong></p>
+<p>Memorial Created On: <strong>{{ object.create_date }}</strong></p>
+
+<a href="{% url 'memorial-list' %}" class="btn btn-primary">Back To Listing</a>
+<a href="{{ object.get_update_url }}" class="btn btn-primary">Edit this Item</a>
+
+</div>
+{% endblock %}
