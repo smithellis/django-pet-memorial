@@ -68,3 +68,21 @@ label {
 section {
     background-color: #ffffff;
 }
+
+.prettier {
+    background-color: #ffffff;
+    border: thin solid black;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+th {
+    background-color: #BA0C2f;
+    color: #ffffff;
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+
+#header {
+    margin-bottom: 20px;
+}

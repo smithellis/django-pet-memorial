@@ -68,6 +68,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'process-donation' %}">Process A Donation</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'past-donations' %}">See Past Donations</a>
+                        </li>
                         {% if user.is_authenticated %}
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'logout' %}">Logout</a>

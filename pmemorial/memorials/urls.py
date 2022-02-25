@@ -12,4 +12,5 @@ urlpatterns = [
     path('memorial/detail/<int:pk>/', MemorialDetail.as_view(), name='memorial-detail'),
     path('payment', views.payment, name='payment'),
     path('process_donation', views.process_donation, name='process-donation'),
+    path('past-donations', views.past_donations, name='past-donations'),
 ]

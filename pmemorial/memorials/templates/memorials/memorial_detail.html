@@ -4,8 +4,11 @@
 
 {% block content %}
 <div class="container">
-<h2>Memorial Details</h2>
-<h3>A Memorial for the beloved pet of {{ object.owner_name }}</h3>
+    <h1>Memorial Details</h1>
+    <div class="row">
+        <div class="col-lg-12 prettier">
+
+<h2>A Memorial for the beloved pet of {{ object.owner_name }}</h2>
 <p>Once submitted to processing, it will be mailed to:</p>
 <address>
     <strong>{{ object.owner_name }}</strong><br>
@@ -23,6 +26,7 @@
 
 <a href="{% url 'memorial-list' %}" class="btn btn-primary">Back To Listing</a>
 <a href="{{ object.get_update_url }}" class="btn btn-primary">Edit this Item</a>
-
+</div>
+</div>
 </div>
 {% endblock %}

@@ -61,6 +61,7 @@ class MemorialDetail(LoginRequiredMixin, DetailView):
     model = Memorial
     fields = ['hospital','owner_name','owner_address_one','owner_address_two', 'owner_city', 'owner_state', 'owner_zipcode', 'pet_name', 'pet_species']
 
+
 @login_required    
 def process_donation(request):
     funds = Fund.objects.all()
@@ -68,6 +69,17 @@ def process_donation(request):
                 hospital=request.user.profile.hospital.id, status="New"
                                         )
     return render(request, 'memorials/process_donation.html', {'funds': funds, 'memorials': memorials})
+
+def payment(request):
+    pass
+
+@login_required    
+def past_donations(request):
+    donations = Donation.objects.filter(
+                hospital=request.user.profile.hospital.id, status="Paid"
+    )
+
+    return render(request, 'memorials/past_donations.html', {'donations': donations})
 
 def payment(request):
     pass
