@@ -23,6 +23,6 @@ admin.site.site_title = "Pet Memorial Administration"
 urlpatterns = [
     #path('admin/login/', auth_views.LoginView.as_view(template_name='login.html'), name='login'),
     path('admin/', admin.site.urls),
-    path('accounts/', include('django.contrib.auth.urls')),
+    #path('accounts/', include('django.contrib.auth.urls')),
     path('memorials/', include('memorials.urls')),
 ]
